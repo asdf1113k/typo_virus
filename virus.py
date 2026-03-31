@@ -12,7 +12,7 @@ def removal_process():
     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
     time.sleep(1)
 
-    bar = progressbar.ProgressBar(max_value=66)
+    bar = progressbar.ProgressBar(maxval=66)
     for index in range(len(list_virus)):
         time.sleep(0.03)
         try:
