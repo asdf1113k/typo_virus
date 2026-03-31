@@ -1,10 +1,11 @@
 import time
-import progressbar
 import os
 import webbrowser
 import threading
 from list_virus import list_virus
 from list_command import list_command
+
+import progressbar
 
 
 def removal_process():
