@@ -1,4 +1,5 @@
-list_virus = ['DarkSoulExtractor — программа для извлечения тёмных душ из игровых файлов',
+list_virus = [
+'DarkSoulExtractor — программа для извлечения тёмных душ из игровых файлов',
 'CryptKeeper — хранитель зашифрованных секретов',
 'NightmareInjector — инъектор ночных кошмаров',
 'ShadowCrawler — теневой краулер для сбора данных',
