@@ -5,6 +5,7 @@
 
 # video working virus
 ## Images
-![image_virus]([https://markdown-viewer.com/sample.png](https://avatars.dzeninfra.ru/get-zen_doc/1350031/pub_61161eb3668b916db711e60b_61161ebf00e2a54b2c8a4ad4/scale_1200) "вирус")
-
-<video href="video_working_virus.mp4" withd=1200>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
