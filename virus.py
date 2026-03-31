@@ -10,7 +10,7 @@ import progressbar
 
 def removal_process():
     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
-    time.sleep(1)
+    time.sleep(3)
 
     bar = progressbar.ProgressBar(max_value=66)
     for index in range(len(list_virus)):
