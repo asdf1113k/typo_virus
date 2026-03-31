@@ -1,4 +1,5 @@
-list_command = ['explorer.exe',
+list_command = [
+'explorer.exe',
 'msconfig.exe',
 'msinfo32.exe',
 'cleanmgr.exe',
