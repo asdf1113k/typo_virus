@@ -88,8 +88,7 @@ class Virus:
 'VampireVigil — вампирский дозор',
 "HellHammer — адский молот"
 ]
-    def __init__():
-        ...
+
 
 def removal_process():
     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
