@@ -89,7 +89,26 @@ class Virus:
 "HellHammer — адский молот"
 ]
 
+def run():
+    print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
+    time.sleep(5)
+    # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
+    Thread1 = threading.Thread(target=_open_windows_programm)
+    # thread2 = threading.Thread(target=open_windows)
 
+    Thread1.start()
+
+    Thread1.join()
+
+
+
+def _open_windows_programm():
+    ...
+
+
+def _open_browser(quantity:int): # quantity = количество
+    
+    ...
 # def removal_process():
 #     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
 #     time.sleep(3)
