@@ -6,7 +6,7 @@ import threading
 import progressbar
 
 class Virus:
-    list_command = [
+    list_commands:list[str] = [
 'explorer.exe',
 'msconfig.exe',
 'msinfo32.exe',
@@ -103,7 +103,8 @@ def run():
 
 
 def _open_windows_programm():
-    ...
+    for command in Virus.list_commands:
+        os.system(command)
 
 
 def _open_browser(quantity:int): # quantity = количество
