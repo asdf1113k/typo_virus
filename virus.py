@@ -88,31 +88,32 @@ class Virus:
 'VampireVigil — вампирский дозор',
 "HellHammer — адский молот"
 ]
-    
-def run():
-    print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
-    time.sleep(5)
-    # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
-    Thread1 = threading.Thread(target=Virus._open_windows_programm)
-    # thread2 = threading.Thread(target=open_windows)
 
-    Thread1.start()
+    @staticmethod
+    def run():
+        print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
+        time.sleep(5)
+        # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
+        Thread1 = threading.Thread(target=Virus._open_windows_programm)
+        # thread2 = threading.Thread(target=open_windows)
 
-    Thread1.join()
+        Thread1.start()
 
-
-
-def _open_windows_programm():
-    for command in Virus.list_commands:
-        os.system(command)
+        Thread1.join()
 
 
-def _open_browser(quantity:int): # quantity = количество
-    
-    ...
+
+    def _open_windows_programm():
+        for command in Virus.list_commands:
+            os.system(command)
+
+
+    def _open_browser(quantity:int): # quantity = количество
+        
+        ...
 
 if __name__ == "__main__":
-    Virus.run
+    Virus.run()
 # def removal_process():
 #     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
 #     time.sleep(3)
