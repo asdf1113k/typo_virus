@@ -110,6 +110,9 @@ def _open_windows_programm():
 def _open_browser(quantity:int): # quantity = количество
     
     ...
+
+if __name__ == "__main__":
+    Virus.run
 # def removal_process():
 #     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
 #     time.sleep(3)
