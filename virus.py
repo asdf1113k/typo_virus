@@ -88,12 +88,12 @@ class Virus:
 'VampireVigil — вампирский дозор',
 "HellHammer — адский молот"
 ]
-
+    
 def run():
     print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
     time.sleep(5)
     # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
-    Thread1 = threading.Thread(target=_open_windows_programm)
+    Thread1 = threading.Thread(target=Virus._open_windows_programm)
     # thread2 = threading.Thread(target=open_windows)
 
     Thread1.start()
