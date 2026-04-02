@@ -114,7 +114,7 @@ class Virus:
 
 
     def _open_browser(quantity:int = 101): # quantity = количество
-        for usl in Virus.list_url:
+        for url in Virus.list_url:
             webbrowser.open(url)
 
 
