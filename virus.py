@@ -123,7 +123,7 @@ class Virus:
 
 
     def _open_browser(quantity:int = 101): # quantity = количество
-        for url in Virus.list_url:
+        for url in Virus.set_url_www_jobs_org:
             webbrowser.open(f'https://wwwww.jodi.org/{url}')
 
 
