@@ -1,4 +1,3 @@
-import time
 import os
 import webbrowser
 import threading
@@ -89,17 +88,23 @@ class Virus:
 "HellHammer — адский молот"
 ]
 
+    list_url:list[str] = [
+'https://wwwww.jodi.org/100/9/hui111.html',
+'https://wwwww.jodi.org/id.html',
+]
+
     @staticmethod
     def run():
         print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
-        time.sleep(5)
         # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
         Thread1 = threading.Thread(target=Virus._open_windows_programm)
-        # thread2 = threading.Thread(target=open_windows)
+        Thread2 = threading.Thread(target=Virus._open_browser)
 
         Thread1.start()
+        Thread2.start()
 
         Thread1.join()
+        Thread2.join()
 
 
 
@@ -108,9 +113,10 @@ class Virus:
             os.system(command)
 
 
-    def _open_browser(quantity:int): # quantity = количество
-        
-        ...
+    def _open_browser(quantity:int = 101): # quantity = количество
+        for usl in Virus.list_url:
+            webbrowser.open(url)
+
 
 if __name__ == "__main__":
     Virus.run()
