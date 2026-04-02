@@ -88,9 +88,13 @@ class Virus:
 "HellHammer — адский молот"
 ]
 
-    list_url:list[str] = [
-'https://wwwww.jodi.org/100/9/hui111.html',
-'https://wwwww.jodi.org/id.html',
+    list_url_www_jobs_org:list[str] = [
+'',
+'100/index.html',
+'id.html',
+'indexx.html',
+'100/00.html',
+'',
 ]
 
     @staticmethod
@@ -115,7 +119,7 @@ class Virus:
 
     def _open_browser(quantity:int = 101): # quantity = количество
         for url in Virus.list_url:
-            webbrowser.open(url)
+            webbrowser.open(f'https://wwwww.jodi.org/{url}')
 
 
 if __name__ == "__main__":
