@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "alive-progress>=3.3.0",
     "progressbar>=2.5",
 ]
 
