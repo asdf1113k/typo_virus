@@ -1,22 +1,23 @@
+import time
 import os
 import webbrowser
 import threading
 
-import progressbar
+from alive_progress import alive_bar
 
 class Virus:
     list_commands:list[str] = [
-'explorer.exe',
-'msconfig.exe',
-'msinfo32.exe',
-'cleanmgr.exe',
-'mstsc.exe',
-'charmap.exe',
-'eventvwr.msc',
-'ncpa.cpl',
-'appwiz.cpl',
-'sfc /scannow',
-'ipconfig'
+# 'explorer.exe',
+# 'msconfig.exe',
+# 'msinfo32.exe',
+# 'cleanmgr.exe',
+# 'mstsc.exe',
+# 'charmap.exe',
+# 'eventvwr.msc',
+# 'ncpa.cpl',
+# 'appwiz.cpl',
+# 'sfc /scannow',
+'ipconfig',
 ]
     
     list_virus = [
@@ -105,27 +106,75 @@ class Virus:
     @staticmethod
     def run():
         print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
-        # ProgressBar = progressbar.ProgressBar(max_value=len(Virus.list_virus))
-        Thread1 = threading.Thread(target=Virus._open_windows_programm)
-        Thread2 = threading.Thread(target=Virus._open_browser)
+        open_windows_programm = threading.Thread(target=Virus._open_windows_programm)
+        open_browser = threading.Thread(target=Virus._open_browser)
+        virus_notification = threading.Thread(target=Virus._virus_notification)
 
-        Thread1.start()
-        Thread2.start()
+        # open_windows_programm.start()
+        # open_browser.start()
+        virus_notification.start()
 
-        Thread1.join()
-        Thread2.join()
-
-
+        # open_windows_programm.join()
+        # open_browser.join()
+        virus_notification.join()
 
     def _open_windows_programm():
         for command in Virus.list_commands:
             os.system(command)
 
-
     def _open_browser(quantity:int = 101): # quantity = количество
         for url in Virus.set_url_www_jobs_org:
             webbrowser.open(f'https://wwwww.jodi.org/{url}')
 
+    def clear_terminal():
+        print("\033[H\033[J", end="")
+
+    def _virus_notification():
+        Virus.clear_terminal()
+        with alive_bar(3) as bar:
+            bar()
+            print(r'''
+  ______                    _   _     _               _           _     _ _                    _                             _               _ 
+ |  ____|                  | | | |   (_)             (_)         | |   (_) |                  ( )                           (_)             | |
+ | |____   _____ _ __ _   _| |_| |__  _ _ __   __ _   _ ___   ___| |__  _| |_    __      _____|/__   _____    __ _ _ __ _ __ ___   _____  __| |
+ |  __\ \ / / _ \ '__| | | | __| '_ \| | '_ \ / _` | | / __| / __| '_ \| | __|   \ \ /\ / / _ \ \ \ / / _ \  / _` | '__| '__| \ \ / / _ \/ _` |
+ | |___\ V /  __/ |  | |_| | |_| | | | | | | | (_| | | \__ \ \__ \ | | | | |_ _   \ V  V /  __/  \ V /  __/ | (_| | |  | |  | |\ V /  __/ (_| |
+ |______\_/ \___|_|   \__, |\__|_| |_|_|_| |_|\__, | |_|___/ |___/_| |_|_|\__( )   \_/\_/ \___|   \_/ \___|  \__,_|_|  |_|  |_| \_/ \___|\__,_|
+                       __/ |                   __/ |                         |/                                                                
+                      |___/                   |___/                                                                                                         
+                                                            Всё — дерьмо, мы приехали.
+        ''')
+        
+            
+            bar()
+            time.sleep(5)
+            print(r'''
+                                                           _              _       _        __          _           _ 
+                                                          | |            (_)     (_)      / _|        | |         | |
+  _   _  ___  _   _ _ __    ___ ___  _ __ ___  _ __  _   _| |_ ___ _ __   _ ___   _ _ __ | |_ ___  ___| |_ ___  __| |
+ | | | |/ _ \| | | | '__|  / __/ _ \| '_ ` _ \| '_ \| | | | __/ _ \ '__| | / __| | | '_ \|  _/ _ \/ __| __/ _ \/ _` |
+ | |_| | (_) | |_| | |    | (_| (_) | | | | | | |_) | |_| | ||  __/ |    | \__ \ | | | | | ||  __/ (__| ||  __/ (_| |
+  \__, |\___/ \__,_|_|     \___\___/|_| |_| |_| .__/ \__,_|\__\___|_|    |_|___/ |_|_| |_|_| \___|\___|\__\___|\__,_|
+   __/ |                                      | |                                                                    
+  |___/                                       |_|    
+                                                                                  
+                                                    твой компютер заражен
+                ''')
+            bar()
+            time.sleep(5)
+            print(r'''
+                  _                             _   _       _                                                          _ _   
+                 | |                           | | (_)     (_)                                                        (_) |  
+   __ _ _ __   __| |  _ __   ___     __ _ _ __ | |_ ___   ___ _ __ _   _ ___    ___ __ _ _ __     ___ _   _ _ __ ___   _| |_ 
+  / _` | '_ \ / _` | | '_ \ / _ \   / _` | '_ \| __| \ \ / / | '__| | | / __|  / __/ _` | '_ \   / __| | | | '__/ _ \ | | __|
+ | (_| | | | | (_| | | | | | (_) | | (_| | | | | |_| |\ V /| | |  | |_| \__ \ | (_| (_| | | | | | (__| |_| | | |  __/ | | |_ 
+  \__,_|_| |_|\__,_| |_| |_|\___/   \__,_|_| |_|\__|_| \_/ |_|_|   \__,_|___/  \___\__,_|_| |_|  \___|\__,_|_|  \___| |_|\__|
+                                                                                                                                                                                                                                                          
+                                            и ни один антивирус не сможет это вылечить
+        ''')
+            time.sleep(10)
+    
+            
 
 if __name__ == "__main__":
     Virus.run()
