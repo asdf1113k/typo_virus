@@ -20,7 +20,7 @@ class Virus:
 'ipconfig',
 ]
     
-    list_virus = [
+    list_programm = [
 'DarkSoulExtractor — программа для извлечения тёмных душ из игровых файлов',
 'CryptKeeper — хранитель зашифрованных секретов',
 'NightmareInjector — инъектор ночных кошмаров',
@@ -105,10 +105,12 @@ class Virus:
 
     @staticmethod
     def run():
-        print('ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
-        open_windows_programm = threading.Thread(target=Virus._open_windows_programm)
-        open_browser = threading.Thread(target=Virus._open_browser)
-        virus_notification = threading.Thread(target=Virus._virus_notification)
+        print('УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
+        time.sleep(5)
+        Virus.programs_installed_joke()
+        open_windows_programm = threading.Thread(target=Virus.open_windows_programm)
+        open_browser = threading.Thread(target=Virus.open_browser)
+        virus_notification = threading.Thread(target=Virus.virus_notification)
 
         # open_windows_programm.start()
         # open_browser.start()
@@ -118,22 +120,30 @@ class Virus:
         # open_browser.join()
         virus_notification.join()
 
-    def _open_windows_programm():
+    def open_windows_programm():
         for command in Virus.list_commands:
             os.system(command)
 
-    def _open_browser():
+    def open_browser():
         for url in Virus.set_url_www_jobs_org:
             webbrowser.open(f'https://wwwww.jodi.org/{url}')
+
+    def programs_installed_joke():
+        with alive_bar(len(Virus.list_programm)) as bar:
+            bar()
+            for name_and_description_programm in Virus.list_programm:
+                print(name_and_description_programm)
+                bar()
+                time.sleep(0.1)
+            else:
+                Virus.clear_terminal()
 
     def clear_terminal():
         print("\033[H\033[J", end="")
 
-    def _virus_notification():
+    def virus_notification():
         Virus.clear_terminal()
-        with alive_bar(3) as bar:
-            bar()
-            print(r'''
+        print(r'''
   ______                    _   _     _               _           _     _ _                    _                             _               _ 
  |  ____|                  | | | |   (_)             (_)         | |   (_) |                  ( )                           (_)             | |
  | |____   _____ _ __ _   _| |_| |__  _ _ __   __ _   _ ___   ___| |__  _| |_    __      _____|/__   _____    __ _ _ __ _ __ ___   _____  __| |
@@ -146,9 +156,9 @@ class Virus:
         ''')
         
             
-            bar()
-            time.sleep(5)
-            print(r'''
+        
+        time.sleep(5)
+        print(r'''
                                                            _              _       _        __          _           _ 
                                                           | |            (_)     (_)      / _|        | |         | |
   _   _  ___  _   _ _ __    ___ ___  _ __ ___  _ __  _   _| |_ ___ _ __   _ ___   _ _ __ | |_ ___  ___| |_ ___  __| |
@@ -160,9 +170,8 @@ class Virus:
                                                                                   
                                                     твой компютер заражен
                 ''')
-            bar()
-            time.sleep(5)
-            print(r'''
+        time.sleep(5)
+        print(r'''
                   _                             _   _       _                                                          _ _   
                  | |                           | | (_)     (_)                                                        (_) |  
    __ _ _ __   __| |  _ __   ___     __ _ _ __ | |_ ___   ___ _ __ _   _ ___    ___ __ _ _ __     ___ _   _ _ __ ___   _| |_ 
@@ -172,9 +181,9 @@ class Virus:
                                                                                                                                                                                                                                                           
                                             и ни один антивирус не сможет это вылечить
         ''')
-            time.sleep(10)
+        time.sleep(10)
     
-            
+    
 
 if __name__ == "__main__":
     Virus.run()
