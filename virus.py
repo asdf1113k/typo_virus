@@ -132,7 +132,7 @@ class Virus:
         with alive_bar(len(Virus.list_programm)) as bar:
             bar()
             for name_and_description_programm in Virus.list_programm:
-                print(name_and_description_programm)
+                print(f'{name_and_description_programm}.exe')   
                 bar()
                 time.sleep(0.1)
             else:
