@@ -20,7 +20,7 @@ class Virus:
 'ipconfig',
 ]
     
-    list_programm = [
+    list_programm:list[str] = [
 'DarkSoulExtractor — программа для извлечения тёмных душ из игровых файлов',
 'CryptKeeper — хранитель зашифрованных секретов',
 'NightmareInjector — инъектор ночных кошмаров',
@@ -89,7 +89,7 @@ class Virus:
 "HellHammer — адский молот"
 ]
 
-    set_url_www_jobs_org:set[str] = set([
+    url_paths:list[str] = [
 '',
 '100/index.html',
 '../beta/untitled/4.html',
@@ -101,48 +101,47 @@ class Virus:
 '../id.html',
 'hqx/index.html',
 'indexx.html',
-])
+]
 
-    @staticmethod
-    def run():
+    url_paths__www_jobs_org:set[list[str]] = set(url_paths)
+
+    def run(self) -> None:
         print('УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
         time.sleep(5)
-        Virus.programs_installed_joke()
-        open_windows_programm = threading.Thread(target=Virus.open_windows_programm)
-        open_browser = threading.Thread(target=Virus.open_browser)
-        virus_notification = threading.Thread(target=Virus.virus_notification)
+        self.programs_install__joke()
+        # open_windows_programm = threading.Thread(target=self.open_windows_programm)
+        # open_browser = threading.Thread(target=self.open_browser)
 
         # open_windows_programm.start()
         # open_browser.start()
-        virus_notification.start()
 
         # open_windows_programm.join()
         # open_browser.join()
-        virus_notification.join()
+        self.virus_notification()
 
-    def open_windows_programm():
+    def open_windows_programm(self) -> None:
         for command in Virus.list_commands:
             os.system(command)
 
-    def open_browser():
+    def open_browser(self) -> None:
         for url in Virus.set_url_www_jobs_org:
             webbrowser.open(f'https://wwwww.jodi.org/{url}')
 
-    def programs_installed_joke():
+    def programs_install__joke(self) -> None:
         with alive_bar(len(Virus.list_programm)) as bar:
             bar()
             for name_and_description_programm in Virus.list_programm:
-                print(f'{name_and_description_programm}.exe')   
+                print(name_and_description_programm)
                 bar()
                 time.sleep(0.1)
             else:
-                Virus.clear_terminal()
+                self.clear_terminal()
 
-    def clear_terminal():
+    def clear_terminal(self) -> None:
         print("\033[H\033[J", end="")
 
-    def virus_notification():
-        Virus.clear_terminal()
+    def virus_notification(self) -> None:
+        self.clear_terminal()
         print(r'''
   ______                    _   _     _               _           _     _ _                    _                             _               _ 
  |  ____|                  | | | |   (_)             (_)         | |   (_) |                  ( )                           (_)             | |
@@ -156,8 +155,8 @@ class Virus:
         ''')
         
             
-        
         time.sleep(5)
+        self.clear_terminal()
         print(r'''
                                                            _              _       _        __          _           _ 
                                                           | |            (_)     (_)      / _|        | |         | |
@@ -171,6 +170,7 @@ class Virus:
                                                     твой компютер заражен
                 ''')
         time.sleep(5)
+        self.clear_terminal()
         print(r'''
                   _                             _   _       _                                                          _ _   
                  | |                           | | (_)     (_)                                                        (_) |  
@@ -186,7 +186,8 @@ class Virus:
     
 
 if __name__ == "__main__":
-    Virus.run()
+    virus = Virus()
+    virus.run()
 # def removal_process():
 #     print("ЗАПУСК ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДаЖИ ВАШИХ ДАННЫХ")
 #     time.sleep(3)
