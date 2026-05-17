@@ -3,10 +3,9 @@ import threading
 from time import sleep
 
 
-
-func1 = lambda :print(["отработала 1", sleep(5)])
-func2 = lambda :print(["отработала 1", sleep(5)])
-func3 = lambda :print(["отработала 1", sleep(5)])
+func1 = lambda: print(["отработала 1", sleep(5)])
+func2 = lambda: print(["отработала 1", sleep(5)])
+func3 = lambda: print(["отработала 1", sleep(5)])
 
 # func1()
 # func2()

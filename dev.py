@@ -25,12 +25,12 @@ def removal_process():
 
 
 def open_windows():
-    for count in range(1): # !!! range(100)
+    for count in range(1):  # !!! range(100)
         for index in range(len(list_command)):
             os.system(list_command[index])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     thread1 = threading.Thread(target=removal_process)
     thread2 = threading.Thread(target=open_windows)
 

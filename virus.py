@@ -1,62 +1,62 @@
 import time
 import os
 import webbrowser
-import threading
 
 from alive_progress import alive_bar
 
+
 class Virus:
-    list_commands:list[str] = [
-'color 2',
-'ipconfig | find "192"',
-'curl 2ip.ru',
-'echo ваши IP получины :)',
-'echo подготовка программ к скачиванию и установки :)',
-'color C',
-]
-    
-    list_programm:list[str] = [
-'DarkSoulExtractor — программа для копирования логов и паролей от игровых аккаунтов',
-'CryptKeeper — поиск зашифрованных и секретных файлов',
-'ShadowCrawler — теневой краулер для сбора паролей',
-'GhostHunter — охотник за открытыми портами в сети',
-'BloodParser — парсер кровавых логов',
-'PhantomSpy — фантомный шпион для мониторинга',
-'DemonDownloader — демонический вредоносный загрузчик файлов',
-"WitchCraft — колдовская программа для обработки и шифровки данных",
-'ZombieArmy — добавления вашего компьютера в армия зомби для DDoS-атак',
-'GhostWalker — раздачик вашей информации по сети',
-'DeathWhisper — шёпот смерти вашего компьютера для мониторинга системы',
-'PhantomProwler — призрачный охотник для сканирования local сети',
-'ShadowStalker — теневой сталкер для отслеживания активности устройства',
-'VampireVault — отправка данных в вампирский архив данных',
-'BloodBender — изгибатель процессорных потоков',
-'DemonDweller — загрузка вечного обитателя в систему',
-'ZombieZapper — уничтожитель системных-процессов',
-'ZombieZephyr — зомби-ветер для передачи данных',
-'DeathDigger — копатель могил данных чтоб точно нельзя было востановить',
-'PhantomPhoenix — фантомный феникс для возрождения вредоносных программ',
-'ZombieZapper — уничтожитель зомби-логов',
-]
+    list_commands: list[str] = [
+        "color 2",
+        'ipconfig | find "192"',
+        "curl 2ip.ru",
+        "echo ваши IP получины :)",
+        "echo подготовка программ к скачиванию и установки :)",
+        "color C",
+    ]
 
-    url_paths:list[str] = [
-'',
-'100/index.html',
-'../beta/untitled/4.html',
-'hqx/i802.html',
-'../beta/index.html',
-'id.html',
-'100/00.html',
-'../goodtimes/index.html',
-'../id.html',
-'hqx/index.html',
-'indexx.html',
-]
+    list_programm: list[str] = [
+        "DarkSoulExtractor — программа для копирования логов и паролей от игровых аккаунтов",
+        "CryptKeeper — поиск зашифрованных и секретных файлов",
+        "ShadowCrawler — теневой краулер для сбора паролей",
+        "GhostHunter — охотник за открытыми портами в сети",
+        "BloodParser — парсер кровавых логов",
+        "PhantomSpy — фантомный шпион для мониторинга",
+        "DemonDownloader — демонический вредоносный загрузчик файлов",
+        "WitchCraft — колдовская программа для обработки и шифровки данных",
+        "ZombieArmy — добавления вашего компьютера в армия зомби для DDoS-атак",
+        "GhostWalker — раздачик вашей информации по сети",
+        "DeathWhisper — шёпот смерти вашего компьютера для мониторинга системы",
+        "PhantomProwler — призрачный охотник для сканирования local сети",
+        "ShadowStalker — теневой сталкер для отслеживания активности устройства",
+        "VampireVault — отправка данных в вампирский архив данных",
+        "BloodBender — изгибатель процессорных потоков",
+        "DemonDweller — загрузка вечного обитателя в систему",
+        "ZombieZapper — уничтожитель системных-процессов",
+        "ZombieZephyr — зомби-ветер для передачи данных",
+        "DeathDigger — копатель могил данных чтоб точно нельзя было востановить",
+        "PhantomPhoenix — фантомный феникс для возрождения вредоносных программ",
+        "ZombieZapper — уничтожитель зомби-логов",
+    ]
 
-    url_paths__www_jobs_org:set[list[str]] = set(url_paths)
+    url_paths: list[str] = [
+        "",
+        "100/index.html",
+        "../beta/untitled/4.html",
+        "hqx/i802.html",
+        "../beta/index.html",
+        "id.html",
+        "100/00.html",
+        "../goodtimes/index.html",
+        "../id.html",
+        "hqx/index.html",
+        "indexx.html",
+    ]
+
+    url_paths__www_jobs_org: set[list[str]] = set(url_paths)
 
     def run(self) -> None:
-        print('УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
+        print("УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ")
         self.run_commands()
         time.sleep(8)
         self.programs_install__joke()
@@ -70,7 +70,7 @@ class Virus:
 
     def open_browser(self) -> None:
         for url in Virus.url_paths__www_jobs_org:
-            webbrowser.open(f'https://wwwww.jodi.org/{url}')
+            webbrowser.open(f"https://wwwww.jodi.org/{url}")
 
     def programs_install__joke(self) -> None:
         with alive_bar(len(Virus.list_programm)) as bar:
@@ -84,11 +84,11 @@ class Virus:
                 self.clear_terminal()
 
     def clear_terminal(self) -> None:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system("cls" if os.name == "nt" else "clear")
 
     def virus_notification(self) -> None:
         self.clear_terminal()
-        print(r'''
+        print(r"""
   ______                    _   _     _               _           _     _ _                    _                             _               _ 
  |  ____|                  | | | |   (_)             (_)         | |   (_) |                  ( )                           (_)             | |
  | |____   _____ _ __ _   _| |_| |__  _ _ __   __ _   _ ___   ___| |__  _| |_    __      _____|/__   _____    __ _ _ __ _ __ ___   _____  __| |
@@ -98,12 +98,11 @@ class Virus:
                        __/ |                   __/ |                         |/                                                                
                       |___/                   |___/                                                                                                         
                                                             Всё — дерьмо, мы приехали.
-        ''')
-        
-            
+        """)
+
         time.sleep(5)
         self.clear_terminal()
-        print(r'''
+        print(r"""
                                                            _              _       _        __          _           _ 
                                                           | |            (_)     (_)      / _|        | |         | |
   _   _  ___  _   _ _ __    ___ ___  _ __ ___  _ __  _   _| |_ ___ _ __   _ ___   _ _ __ | |_ ___  ___| |_ ___  __| |
@@ -114,10 +113,10 @@ class Virus:
   |___/                                       |_|    
                                                                                   
                                                     твой компютер заражен
-                ''')
+                """)
         time.sleep(5)
         self.clear_terminal()
-        print(r'''
+        print(r"""
                   _                             _   _       _                                                          _ _   
                  | |                           | | (_)     (_)                                                        (_) |  
    __ _ _ __   __| |  _ __   ___     __ _ _ __ | |_ ___   ___ _ __ _   _ ___    ___ __ _ _ __     ___ _   _ _ __ ___   _| |_ 
@@ -126,10 +125,9 @@ class Virus:
   \__,_|_| |_|\__,_| |_| |_|\___/   \__,_|_| |_|\__|_| \_/ |_|_|   \__,_|___/  \___\__,_|_| |_|  \___|\__,_|_|  \___| |_|\__|
                                                                                                                                                                                                                                                           
                                             и ни один антивирус не сможет это вылечить
-        ''')
+        """)
         time.sleep(10)
-    
-    
+
 
 if __name__ == "__main__":
     virus = Virus()
