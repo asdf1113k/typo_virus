@@ -2,6 +2,7 @@ import os
 import webbrowser
 
 from time import sleep
+
 from alive_progress import alive_bar
 from colorama import init, Fore
 
@@ -41,28 +42,65 @@ class Virus:
         "ZombieZapper — уничтожитель зомби-логов",
     ]
 
-    url_paths: list[str] = [
+    url_paths: set[str] = {
         "",
-        "100/index.html",
-        "../beta/untitled/4.html",
-        "hqx/i802.html",
-        "../beta/index.html",
-        "id.html",
-        "100/00.html",
-        "../goodtimes/index.html",
-        "../id.html",
-        "hqx/index.html",
+        "100/demo/index.html",
         "indexx.html",
-    ]
+        "100/copy/index.html",
+        "indexv.html",
+        "http://www.irational.org/cern/jodi",
+        "100/xz4/index.html",
+        "i801.html",
+        "../goodtimes/index.html",
+        "goodtimes/alpha/index.html",
+        "../../beta/index.html",
+        "i901.html",
+        "index.html",
+        "100/hqx/index.html",
+        "hqx/i802.html",
+        "../beta/untitled/4.html",
+        "i700.html",
+        "../../indexx.html",
+        "beta/rain/index.html",
+        "mailto:madmax@jodi.org",
+        "100/c/index.html",
+        "../cache/index.html",
+        "id.html",
+        "100/url/index.html",
+        "http://www.moobird.com/jodi",
+        "100/hqx/i900.html",
+        "indexw.html",
+        "i900.html",
+        "mailto:satan@jodi.org",
+        "100/xz4/indexw.html",
+        "100/hqx/i801.html",
+        "index.html#top",
+        "goodtimes/index.html",
+        "beta/untitled/20.html",
+        "indexy.html",
+        "../index.html",
+        "100/cu2/index.html",
+        "100/00.html",
+        "100/index.html",
+        "../id.html",
+        "indexz.html",
+        "hqx/index.html",
+        "100/9/hui63.html",
+        "i802.html",
+        "../beta/index.html",
+        "index.html#sleep",
+        "../../beta/rain/index.html",
+        "beta/index.html",
+    }
 
-    url_paths__www_jobs_org: set[list[str]] = set(url_paths)
 
     def run(self) -> None:
         self.clear_terminal()
         print("УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ")
         self.run_commands()
         sleep(8)
-        self.programs_install__joke()
+        # self.programs_install__joke()
+        self.open_browser()
 
         # self.virus_notification()
         # os.system('shutdown /r /t 10 /c "для усвоения всех программ требуется перезагрузка, счастливого пользования!"') # перезагрузка системы
@@ -73,7 +111,7 @@ class Virus:
             sleep(2)
 
     def open_browser(self) -> None:
-        for url in Virus.url_paths__www_jobs_org:
+        for url in Virus.url_paths:
             webbrowser.open(f"https://wwwww.jodi.org/{url}")
 
     def programs_install__joke(self) -> None:
