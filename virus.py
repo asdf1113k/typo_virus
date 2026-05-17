@@ -1,18 +1,20 @@
-import time
 import os
 import webbrowser
 
+from time import sleep
 from alive_progress import alive_bar
+from colorama import init, Fore
 
 
 class Virus:
+    init(autoreset=True)
+
     list_commands: list[str] = [
-        "color 2",
+        "color 3",
         'ipconfig | find "192"',
-        "curl 2ip.ru",
+        "curl ipinfo.io",
         "echo ваши IP получины :)",
-        "echo подготовка программ к скачиванию и установки :)",
-        "color C",
+        "echo подготовка программ к установке :)",
     ]
 
     list_programm: list[str] = [
@@ -56,9 +58,10 @@ class Virus:
     url_paths__www_jobs_org: set[list[str]] = set(url_paths)
 
     def run(self) -> None:
+        self.clear_terminal()
         print("УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ")
         self.run_commands()
-        time.sleep(8)
+        sleep(8)
         self.programs_install__joke()
 
         # self.virus_notification()
@@ -67,6 +70,7 @@ class Virus:
     def run_commands(self) -> None:
         for command in Virus.list_commands:
             os.system(command)
+            sleep(2)
 
     def open_browser(self) -> None:
         for url in Virus.url_paths__www_jobs_org:
@@ -74,12 +78,11 @@ class Virus:
 
     def programs_install__joke(self) -> None:
         with alive_bar(len(Virus.list_programm)) as bar:
-            bar()
             for name_and_description_programm in Virus.list_programm:
-                print(name_and_description_programm)
+                print(Fore.RED + name_and_description_programm)
                 bar()
-                time.sleep(0.1)
-                print("установка завершена")
+                sleep(1)
+                print(Fore.LIGHTGREEN_EX + "установка завершена")
             else:
                 self.clear_terminal()
 
@@ -100,7 +103,7 @@ class Virus:
                                                             Всё — дерьмо, мы приехали.
         """)
 
-        time.sleep(5)
+        sleep(5)
         self.clear_terminal()
         print(r"""
                                                            _              _       _        __          _           _ 
@@ -114,7 +117,7 @@ class Virus:
                                                                                   
                                                     твой компютер заражен
                 """)
-        time.sleep(5)
+        sleep(5)
         self.clear_terminal()
         print(r"""
                   _                             _   _       _                                                          _ _   
@@ -126,7 +129,7 @@ class Virus:
                                                                                                                                                                                                                                                           
                                             и ни один антивирус не сможет это вылечить
         """)
-        time.sleep(10)
+        sleep(10)
 
 
 if __name__ == "__main__":
