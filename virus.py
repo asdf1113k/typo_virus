@@ -7,8 +7,12 @@ from alive_progress import alive_bar
 
 class Virus:
     list_commands:list[str] = [
+'color 2',
 'ipconfig | find "192"',
+'curl 2ip.ru',
 'echo ваши IP получины :)',
+'echo подготовка программ к скачиванию и установки :)',
+'color C',
 ]
     
     list_programm:list[str] = [
@@ -21,19 +25,14 @@ class Virus:
 'DemonDownloader — демонический вредоносный загрузчик файлов',
 "WitchCraft — колдовская программа для обработки и шифровки данных",
 'ZombieArmy — добавления вашего компьютера в армия зомби для DDoS-атак',
-'Necromancer — некромант для работы с устаревшими системами',
 'GhostWalker — раздачик вашей информации по сети',
 'DeathWhisper — шёпот смерти вашего компьютера для мониторинга системы',
 'PhantomProwler — призрачный охотник для сканирования local сети',
-'ShadowStalker — теневой сталкер для отслеживания активности устройств',
-'DemonDriver — демонический драйвер системы',
-'WitchWeaver — ткач колдовских сетей [194.109.7.160]',
-'ZombieZero — нулевое состояние зомби для ZombieArmy',
+'ShadowStalker — теневой сталкер для отслеживания активности устройства',
 'VampireVault — отправка данных в вампирский архив данных',
 'BloodBender — изгибатель процессорных потоков',
 'DemonDweller — загрузка вечного обитателя в систему',
 'ZombieZapper — уничтожитель системных-процессов',
-'HellHammer — адский молот для взлома',
 'ZombieZephyr — зомби-ветер для передачи данных',
 'DeathDigger — копатель могил данных чтоб точно нельзя было востановить',
 'PhantomPhoenix — фантомный феникс для возрождения вредоносных программ',
@@ -58,24 +57,19 @@ class Virus:
 
     def run(self) -> None:
         print('УСТАНОВКА ВРЕДОНОСНЫХ ПРОГРАМм ДЛЯ УДАЛЕНИЯ И ПРОДАЖИ ВАШИХ ДАнНЫХ')
-        time.sleep(5)
+        self.run_commands()
+        time.sleep(8)
         self.programs_install__joke()
-        # open_windows_programm = threading.Thread(target=self.open_windows_programm)
-        # open_browser = threading.Thread(target=self.open_browser)
 
-        # open_windows_programm.start()
-        # open_browser.start()
+        # self.virus_notification()
+        # os.system('shutdown /r /t 10 /c "для усвоения всех программ требуется перезагрузка, счастливого пользования!"') # перезагрузка системы
 
-        # open_windows_programm.join()
-        # open_browser.join()
-        self.virus_notification()
-
-    def open_windows_programm(self) -> None:
+    def run_commands(self) -> None:
         for command in Virus.list_commands:
             os.system(command)
 
     def open_browser(self) -> None:
-        for url in Virus.set_url_www_jobs_org:
+        for url in Virus.url_paths__www_jobs_org:
             webbrowser.open(f'https://wwwww.jodi.org/{url}')
 
     def programs_install__joke(self) -> None:
@@ -85,6 +79,7 @@ class Virus:
                 print(name_and_description_programm)
                 bar()
                 time.sleep(0.1)
+                print("установка завершена")
             else:
                 self.clear_terminal()
 
