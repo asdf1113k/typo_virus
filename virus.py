@@ -104,6 +104,7 @@ class Virus:
 
         # self.virus_notification()
         # os.system('shutdown /r /t 10 /c "для усвоения всех программ требуется перезагрузка, счастливого пользования!"') # перезагрузка системы
+        input()
 
     def run_commands(self) -> None:
         for command in Virus.list_commands:
@@ -167,7 +168,7 @@ class Virus:
                                                                                                                                                                                                                                                           
                                             и ни один антивирус не сможет это вылечить
         """)
-        sleep(10)
+
 
 
 if __name__ == "__main__":
